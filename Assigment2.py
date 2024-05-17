@@ -31,32 +31,28 @@ def main():
     print(f"list1 - {list1}")
     print(f"list2 - {list2}")
     for idx in range(list_length):
-        print(f"List 1 element - {list1[idx]} List 2 element - {list2[list_length-1-idx]}")
+        print(f"List 1 element - {list1[idx]} List 2 element - {list2[list_length - 1 - idx]}")
 
     """
     3.You have given a Python list. Write a program to find value 20 in the list, and if it is present,
     replace it with 200
     """
-
     list1 = [10, 32, 323, 43, 20]
     print(list1)
-    idx = list1.index(20)
-    if idx != -1:
-        list1[idx] = 200
+    list1 = [200 if x == 20 else x for x in list1]
     print(f"Modified list - {list1}")
 
     """
     4. Write program that store users info , username and email , in a dictionary ( use email as key
-    name as value) Allow user to enter info anout 5 users ( use loop
+    name as value) Allow user to enter info about 5 users ( use loop
     """
     user_info_dict = {}
     for idx in range(5):
-        email = input(f"enter email of user {idx+1}: ")
-        user_name = input(f"enter user name of user {idx+1}: ")
+        email = input(f"enter email of user {idx + 1}: ")
+        user_name = input(f"enter user name of user {idx + 1}: ")
         user_info_dict[email] = user_name
     print(f"Registered user details {user_info_dict}")
 
 
 if __name__ == '__main__':
     main()
-
